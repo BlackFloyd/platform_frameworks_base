@@ -14,6 +14,8 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ * Modified by the Crimson Android Project
  */
 -->
 <resources>
@@ -25,7 +27,7 @@
     <color name="system_bar_background_transparent">#00000000</color>
     <color name="notification_panel_solid_background">#ff000000</color>
     <drawable name="status_bar_recents_app_thumbnail_background">#88000000</drawable>
-    <color name="status_bar_recents_app_label_color">#ffffffff</color>
+    <color name="status_bar_recents_app_label_color">#ffB71C1C</color> <!-- red 900 -->
     <drawable name="status_bar_notification_row_background_color">#ff090909</drawable>
     <color name="notification_list_shadow_top">#80000000</color>
     <drawable name="recents_callout_line">#99ffffff</drawable>
@@ -34,9 +36,9 @@
     <color name="batterymeter_charge_color">#FFFFFFFF</color>
     <color name="batterymeter_bolt_color">#FFFFFFFF</color>
     <color name="qs_batterymeter_frame_color">#FF404040</color>
-    <color name="system_primary_color">#ff263238</color><!-- blue grey 900 -->
-    <color name="system_secondary_color">#ff384248</color>
-    <color name="system_accent_color">#ff80CBC4</color><!-- deep teal 200 -->
+    <color name="system_primary_color">#ff424242</color><!-- grey 800 -->
+    <color name="system_secondary_color">#ffB71C1C</color> <!-- red 900 -->
+    <color name="system_accent_color">#ffE53935</color><!-- red 600 -->
     <color name="system_warning_color">#fff4511e</color><!-- deep orange 600 -->
     <color name="qs_text">#FFFFFFFF</color>
     <color name="qs_tile_divider">#29ffffff</color><!-- 16% white -->
@@ -46,7 +48,7 @@
     <color name="qs_detail_button">#FFB0BEC5</color><!-- 100% blue grey 200 -->
     <color name="qs_detail_button_white">#B3FFFFFF</color><!-- 70% white -->
     <color name="qs_detail_transition">#66FFFFFF</color>
-    <color name="qs_detail_progress_track">#99009688</color><!-- 60% deep teal 500 -->
+    <color name="qs_detail_progress_track">#99F44336</color><!-- 60% red 500 -->
     <color name="data_usage_secondary">#99FFFFFF</color><!-- 60% white -->
     <color name="data_usage_graph_track">#33FFFFFF</color><!-- 20% white -->
     <color name="data_usage_graph_warning">#FFFFFFFF</color>
@@ -139,8 +141,8 @@
     <color name="light_mode_icon_color_dual_tone_background">#4dffffff</color>
     <color name="light_mode_icon_color_dual_tone_fill">#ffffff</color>
 
-    <color name="zen_introduction_message_background">#ff009688</color><!-- deep teal 500 -->
+    <color name="zen_introduction_message_background">#FFFFAB91</color><!-- deep orange 200 -->
     <color name="volume_icon_color">#ffffffff</color>
     <color name="volume_settings_icon_color">#7fffffff</color>
-    <color name="volume_slider_inactive">#FFB0BEC5</color><!-- blue grey 200 -->
+    <color name="volume_slider_inactive">#FFFFAB91</color><!-- deep orange 200 -->
 </resources>
