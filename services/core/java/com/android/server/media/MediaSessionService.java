@@ -227,8 +227,8 @@ public class MediaSessionService extends SystemService implements Monitor {
     }
 
     private void updateUser() {
+        int userId = ActivityManager.getCurrentUser();
         synchronized (mLock) {
-            int userId = ActivityManager.getCurrentUser();
             if (mCurrentUserId != userId) {
                 final int oldUserId = mCurrentUserId;
                 mCurrentUserId = userId; // do this first
@@ -764,7 +764,7 @@ public class MediaSessionService extends SystemService implements Monitor {
                 synchronized (mLock) {
                     // If we don't have a media button receiver to fall back on
                     // include non-playing sessions for dispatching
-                    UserRecord ur = mUserRecords.get(ActivityManager.getCurrentUser());
+                    UserRecord ur = mUserRecords.get(mCurrentUserId);
                     boolean useNotPlayingSessions = (ur == null) ||
                             (ur.mLastMediaButtonReceiver == null
                                 && ur.mRestoredMediaButtonReceiver == null);
@@ -957,8 +957,7 @@ public class MediaSessionService extends SystemService implements Monitor {
                         mKeyEventReceiver);
             } else {
                 // Launch the last PendingIntent we had with priority
-                int userId = ActivityManager.getCurrentUser();
-                UserRecord user = mUserRecords.get(userId);
+                UserRecord user = mUserRecords.get(mCurrentUserId);
                 if (user.mLastMediaButtonReceiver != null
                         || user.mRestoredMediaButtonReceiver != null) {
                     if (DEBUG) {
@@ -975,11 +974,11 @@ public class MediaSessionService extends SystemService implements Monitor {
                         if (user.mLastMediaButtonReceiver != null) {
                             user.mLastMediaButtonReceiver.send(getContext(),
                                     needWakeLock ? mKeyEventReceiver.mLastTimeoutId : -1,
-                                    mediaButtonIntent, mKeyEventReceiver, null);
+                                    mediaButtonIntent, mKeyEventReceiver, mHandler);
                         } else {
                             mediaButtonIntent.setComponent(user.mRestoredMediaButtonReceiver);
                             getContext().sendBroadcastAsUser(mediaButtonIntent,
-                                    new UserHandle(userId));
+                                    new UserHandle(mCurrentUserId));
                         }
                     } catch (CanceledException e) {
                         Log.i(TAG, "Error sending key event to media button receiver "
