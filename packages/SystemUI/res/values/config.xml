@@ -51,14 +51,14 @@
 
     <!-- Control whether status bar should distinguish HSPA data icon form UMTS
     data icon on devices -->
-    <bool name="config_hspa_data_distinguishable">false</bool>
+    <bool name="config_hspa_data_distinguishable">true</bool>
 
     <!-- Component to be used as the status bar service.  Must implement the IStatusBar
      interface.  This name is in the ComponentName flattened format (package/class)  -->
     <string name="config_statusBarComponent" translatable="false">com.android.systemui.statusbar.phone.PhoneStatusBar</string>
 
     <!-- Whether or not we show the number in the bar. -->
-    <bool name="config_statusBarShowNumber">false</bool>
+    <bool name="config_statusBarShowNumber">true</bool>
 
     <!-- How many icons may be shown at once in the system bar. Includes any
          slots that may be reused for things like IME control. -->
@@ -139,11 +139,11 @@
     <bool name="config_show4GForLTE">true</bool>
 
     <!-- milliseconds before the heads up notification auto-dismisses. -->
-    <integer name="heads_up_notification_decay">5000</integer>
+    <integer name="heads_up_notification_decay">3000</integer>
 
     <!-- milliseconds after a heads up notification is pushed back
      before the app can interrupt again. -->
-    <integer name="heads_up_default_snooze_length_ms">60000</integer>
+    <integer name="heads_up_default_snooze_length_ms">30000</integer>
 
     <!-- Minimum display time for a heads up notification, in milliseconds. -->
     <integer name="heads_up_notification_minimum_time">2000</integer>
@@ -218,7 +218,7 @@
 
     <!-- The maximum count of notifications on Keyguard. The rest will be collapsed in an overflow
      card. -->
-    <integer name="keyguard_max_notification_count">3</integer>
+    <integer name="keyguard_max_notification_count">4</integer>
 
     <!-- Defines the implementation of the velocity tracker to be used for the panel expansion. Can
          be 'platform' or 'noisy' (i.e. for noisy touch screens). -->
